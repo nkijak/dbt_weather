@@ -1,0 +1,28 @@
+/? create
+/?
+\? create
+\? create
+create user recordsapp with encrypted password 'pass'
+;
+create user recordsapp with encrypted password 'pass';
+select * from users;
+\?
+\d
+create database recordsapp with owner=recordsapp;
+\q
+\d
+\q
+ls
+\d
+show search_path;
+show search_path
+;
+set search_path to dbt_nkijak, public;
+\d
+select * from denormalized_temp_data;
+\h date
+\h date_part
+\h
+\? date_part
+\sf date_part
+\s date_part

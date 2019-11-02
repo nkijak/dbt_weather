@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: weather
+    description: weather fact table
+
+  - name: dim_seasons
+    description: seasons dimension table
