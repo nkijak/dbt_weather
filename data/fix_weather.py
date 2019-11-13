@@ -1,7 +1,7 @@
 def fix_date(bad):
     try:
-        parts = [f'{int(i):02}' for i in bad.split('-')]
-        return f'{parts[2]}-{parts[1]}-{parts[0]}'
+        d,m,y = [f'{int(i):02}' for i in bad.split('-')]
+        return f'{y}-{m}-{d}'
     except ValueError as ve:
         print(f'>>>>>>>>{bad}<<<<<<<')
         raise ve
