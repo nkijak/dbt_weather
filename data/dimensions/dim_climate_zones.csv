@@ -1,0 +1,7 @@
+id,name,pole,latitude_start,latitude_end
+1,Polar,North,66.5,90
+2,Temperate,North,23.5,66.499
+3,Tropical,North,0,23.499
+4,Tropical,South,-23.5, -0.001
+5,Temperate,South,-66.5,-23.501
+6,Polar,South,-90,-66.501

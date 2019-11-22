@@ -1,13 +1,7 @@
-
-# Name your package! Package names should contain only lowercase characters
-# and underscores. A good package name should reflect your organization's
-# name or the intended use of these models
 name: 'weather'
 version: '1.0'
 
-# This setting configures which "profile" dbt uses for this project. Profiles contain
-# database connection information, and should be configured in the  ~/.dbt/profiles.yml file
-profile: 'default'
+profile: 'weather'
 
 source-paths: ["models"]
 analysis-paths: ["analysis"] 
@@ -22,13 +16,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   weather:
-      star_schema:
-        base:
+      base:
           materialized: ephemeral
-
-  seeds:
-    weather:
-      dim_month:
-        column_types:
-          short: char(3)
-          long: varchar(10)
+      dimensions:
+          materialized: table
+      reports:
+          materialized: table
+      meta:
+          tags: "expensive"
+          materialized: table
+          schema: meta

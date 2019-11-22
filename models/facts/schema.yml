@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: station
+    description: Data about weather collection stations
+    columns:
+      - name: station_id
+        description: External station identifier
+        tests:
+          - unique
+          
+  - name: weather
+    description: Cleaned Weather Facts table
+    tests:
+      - unique:
+          column_name: "concat(measurement_date,station_id)"
+    columns:
+      - name: station_id
+        description: internal id of the station that did the recording -- for joins
+        tests:
+          - relationships:
+              to: ref('station')
+              field: id
+              severity: error

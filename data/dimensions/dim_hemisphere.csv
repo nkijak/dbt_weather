@@ -1,0 +1,3 @@
+id,name,longitude_start,longitude_end
+1,Eastern,0.0,179.999
+2,Western,-180.0,-0.001

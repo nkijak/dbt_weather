@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: weather_stats
+    description: Compiles basic stats on the numeric columns of weather
+    columns:
+      - name: column_name
+        description: Name of the column in the weather table
+        tests:
+          - not_null
+      - name: avg
+        description: Average of all values in table
+      - name: null_count
+        description: Number of rows where the column is null

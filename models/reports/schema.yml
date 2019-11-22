@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: denormalized_temp_data
+    description: Denormalized temperature only data
+    tests:
+      - unique:
+          column_name: "concat(station_id, measurement_date)"
+    columns:
+      - name: min_temp_celcius
+        description: The low temp recorded in celsius _name is [SIC]_
+        tests:
+          - not_null
+

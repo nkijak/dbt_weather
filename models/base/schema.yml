@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: raw
+    database: weather
+    schema: public
+
+    freshness:
+      warn_after: {count: 1, period: day}
+
+    tables:
+      - name: station_metadata
+
+      - name: weather_data
+        loaded_at_field: measurement_date
+        columns:
+          - name: station_identifier
+            tests:
+              - not_null
+              - relationships:
+                  to: source('raw', 'station_metadata')
+                  field: station_id
+                  severity: error
+
+      - name: weather_types
